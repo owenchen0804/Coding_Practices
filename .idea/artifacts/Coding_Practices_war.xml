@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Coding_Practices:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Coding_Practices</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Coding_Practices-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Coding_Practices:war exploded" />
+    </root>
+  </artifact>
+</component>
