@@ -1,3 +1,5 @@
+package BinaryTree;
+
 public class LA53_LC450_DeleteBST {
     public TreeNode deleteBST(TreeNode root, int key) {
         //  if (root == null || root.key == key) {
@@ -9,7 +11,7 @@ public class LA53_LC450_DeleteBST {
             root.left = deleteBST(root.left, key);
             return root;
         }
-        else {
+        else if (key < root.key) {
             root.right = deleteBST(root.right, key);
             return root;
         }

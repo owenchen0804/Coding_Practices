@@ -1,3 +1,10 @@
+package BinaryTree;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
 public class LA45_LC145_PostOrderTraversal {
     public List<Integer> postOrder(TreeNode root) {
         List<Integer> result = new ArrayList<>();
@@ -12,7 +19,7 @@ public class LA45_LC145_PostOrderTraversal {
             TreeNode curr = stack.peekFirst();
             // 当prev在curr的上方的时候，要左右子树先进stack
             if (prev == null || prev.left == curr || prev.right == curr) {
-                if (curr.left != left) {
+                if (curr.left != null) {
                     //  curr = curr.left;
                     //  stack.offerFirst(curr);
                     //  curr 不能在这里走，而是靠每次peekFirst()前进，因为每次while循环末尾prev = curr

@@ -1,3 +1,5 @@
+package BinaryTree;
+
 public class LA51_LC701_InsertBST {
     public TreeNode insertBST(TreeNode root, int key) {
         TreeNode newNode = new TreeNode(key);

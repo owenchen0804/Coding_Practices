@@ -1,3 +1,8 @@
+package QueueAndStack;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class LA645_DequeByThreeStacks {
     private Deque<Integer> s1;
     private Deque<Integer> s2;

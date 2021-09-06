@@ -1,3 +1,5 @@
+package BinaryTree;
+
 public class LA46_LC110_CheckBalancedTree {
     public boolean isBalanced(TreeNode root) {
         if (root == null) {

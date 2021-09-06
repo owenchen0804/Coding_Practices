@@ -6,6 +6,7 @@ import java.util.Deque;
 import java.util.List;
 
 public class LA44_LC144_PreOrderTraversal {
+    //  口诀，pop栈顶并打印，右进去，左进去
     public List<Integer> preOrder(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {

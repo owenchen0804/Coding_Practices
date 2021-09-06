@@ -1,3 +1,5 @@
+package BinaryTree;
+
 public class LA48_LC101_CheckSymmetricTree {
     public boolean checkSymmetric(TreeNode root) {
         if (root == null) {
