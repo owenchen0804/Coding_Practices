@@ -1,3 +1,8 @@
+package QueueAndStack;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class LA280_SortWithTwoStacks {
     public void sort(Deque<Integer> s1) {
         if (s1 == null || s1.size() <= 1) {

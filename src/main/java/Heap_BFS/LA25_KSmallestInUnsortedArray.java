@@ -1,3 +1,9 @@
+package Heap_BFS;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 public class LA25_KSmallestInUnsortedArray {
 
     //1. minHeap 需要对整体heapify之后再pop k次, offline算法
@@ -60,7 +66,7 @@ public class LA25_KSmallestInUnsortedArray {
             quickSelect(array, target, pivotIndex + 1, right);
         }
         else {
-            quickSort(array, target, left, pivotIndex - 1);
+            quickSelect(array, target, left, pivotIndex - 1);
         }
     }
 

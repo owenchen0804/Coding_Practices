@@ -1,3 +1,5 @@
+package LinkedList;
+
 public class LA36_LC876_FindMiddle {
     public ListNode findMiddle(ListNode head) {
         if (head == null || head.next == null) {

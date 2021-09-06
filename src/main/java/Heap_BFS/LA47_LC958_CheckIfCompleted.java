@@ -1,3 +1,8 @@
+package Heap_BFS;
+
+import BinaryTree.TreeNode;
+
+import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class LA47_LC958_CheckIfCompleted {
@@ -21,7 +26,7 @@ public class LA47_LC958_CheckIfCompleted {
 
 
             if (curr.right == null) {
-                flag == true;
+                flag = true;
             } else if (flag) {
                 return false;
             } else {

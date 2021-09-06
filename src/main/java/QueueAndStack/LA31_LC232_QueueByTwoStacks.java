@@ -1,3 +1,8 @@
+package QueueAndStack;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class LA31_LC232_QueueByTwoStacks {
     public LA31_LC232_QueueByTwoStacks() {
     }

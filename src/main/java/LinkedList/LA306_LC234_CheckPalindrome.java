@@ -1,3 +1,7 @@
+package LinkedList;
+
+import LinkedList.ListNode;
+
 public class LA306_LC234_CheckPalindrome {
     public boolean checkPalindrome(ListNode head) {
         if (head == null || head.next == null) {
@@ -33,7 +37,7 @@ public class LA306_LC234_CheckPalindrome {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode newHead = reverse1(head.next);
+        ListNode newHead = reverse(head.next);
         head.next.next = head;
         head.next = null;
         return newHead;

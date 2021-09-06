@@ -1,5 +1,9 @@
+package LinkedList;
+
+import LinkedList.ListNode;
+
 public class LA39_InsertInSortedLL {
-    public ListNode(ListNode head, int value) {
+    public ListNode insertLL(ListNode head, int value) {
         ListNode newNode = new ListNode(value);
         if (head == null || head.value >= value) {
             newNode.next = head;

@@ -1,4 +1,6 @@
-public class LA_34_LC206_Reverse_LL {
+package LinkedList;
+
+public class LA34_LC206_Reverse_LL {
     public ListNode reverse1(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -24,11 +26,3 @@ public class LA_34_LC206_Reverse_LL {
     }
 }
 
-class ListNode{
-    public ListNode next;
-    public int value;
-    public ListNode(int value) {
-        this.value = value;
-        next = null;
-    }
-}

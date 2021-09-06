@@ -1,3 +1,5 @@
+package RecursionAndSorting;
+
 public class LA400_RainbowSortIII {
     // Method 1 通过count sort的方法
     public int[] countSort(int[] array, int k) {
@@ -16,23 +18,26 @@ public class LA400_RainbowSortIII {
         return array;
     }
 
-    // Method 2 两头先排序，再往中间凑
-    int left = 0, right = array.length - 1;
-    for (int round = 1; round <= k / 2; round++) {
-        int leftColor = round;
-        int rightColor = k + 1 - round;
-        //  int i = left, j = right;
-        for (int i = left; i <= right; i++) {
-            if (array[i] == leftColor) {
-                swap(array, i, left);
-                left++;
-            }
-            else if (array[i] == rightColor) {
-                swap(array, i, right);
-                right--;
-                i--;
+    public int[] countSort2(int[] array, int k) {
+
+        // Method 2 两头先排序，再往中间凑
+        int left = 0, right = array.length - 1;
+        for (int round = 1; round <= k / 2; round++) {
+            int leftColor = round;
+            int rightColor = k + 1 - round;
+            //  int i = left, j = right;
+            for (int i = left; i <= right; i++) {
+                if (array[i] == leftColor) {
+                    swap(array, i, left);
+                    left++;
+                } else if (array[i] == rightColor) {
+                    swap(array, i, right);
+                    right--;
+                    i--;
+                }
             }
         }
+        return array;
     }
 
     private void swap(int[] array, int left, int right) {

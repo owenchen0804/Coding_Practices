@@ -1,4 +1,6 @@
-public class BinarySearch {
+package BinarySearch;
+
+public class LA14_LC704_ClassicalBinarySearch {
     public int binarySearch(int[] array, int target) {
         if (array == null || array.length == 0) {
             return -1;

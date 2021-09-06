@@ -1,4 +1,6 @@
-public class LA15LC34FirstOccurence {
+package BinarySearch;
+
+public class LA15_LC34_FirstOccurence {
     public int lastOccurence(int[] array, int target) {
         if (array == null || array.length == 0) {
             return -1;

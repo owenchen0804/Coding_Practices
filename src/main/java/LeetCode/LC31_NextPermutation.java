@@ -1,7 +1,7 @@
-//  TC: O(n) 找left and right最多各花O(n)的时间，最后reverse也同样是O(n)
+package LeetCode;//  TC: O(n) 找left and right最多各花O(n)的时间，最后reverse也同样是O(n)
 //  SC: O(1) 这是in-place的操作
 
-public class NextPermutation {
+public class LC31_NextPermutation {
     public void nextPermutation(int[] nums) {
         if (nums.length == 1) {
             return;
@@ -24,7 +24,7 @@ public class NextPermutation {
     }
 
     private void swap(int[] nums, int left, int right) {
-        int temp = nunms[left];
+        int temp = nums[left];
         nums[left] = nums[right];
         nums[right] = temp;
     }

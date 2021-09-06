@@ -1,3 +1,5 @@
+package LinkedList;
+
 public class LA42_LC86_PartitionLL {
     public ListNode partitionLL(ListNode head, int target) {
         if (head == null || head.next == null) {

@@ -1,3 +1,5 @@
+package DIYStructure;
+
 public class MyCircularDeque {
     private int head;
     private int tail;
@@ -21,9 +23,9 @@ public class MyCircularDeque {
         if (size == array.length) {
             return false;
         }
-        head == head == 0 ? array.length - 1 : head - 1;
+        head = head == 0 ? array.length - 1 : head - 1;
         array[head] = value;
-        siez++;
+        size++;
         return true;
     }
 

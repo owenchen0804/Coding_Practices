@@ -1,6 +1,7 @@
 package BinarySearch;
 
-public class FindMatrix {
+public class LA267_LC74_FindMatrix {
+
     public int[] findMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return new int[] {-1, -1};
@@ -10,7 +11,7 @@ public class FindMatrix {
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (matrix[mid / M][mid % N] == target) {
-                return new int[mid / M, mid % N];
+                return new int[] {mid / M, mid % N};
             }
             if (matrix[mid / M][mid % N] < target) {
                 left = mid + 1;

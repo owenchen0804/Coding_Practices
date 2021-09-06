@@ -1,7 +1,9 @@
+package LinkedList;
+
 public class LA223_LC2_AddTwoNumbers {
     // Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
     //  Output: 7 -> 0 -> 8
-    public ListNode add(ListNode one, ListNode two) {
+    public ListNode addTwoNumber(ListNode one, ListNode two) {
         ListNode dummy = new ListNode(0);
         int carry = 0;
         //  int sum = 0;

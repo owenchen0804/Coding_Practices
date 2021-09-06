@@ -1,3 +1,10 @@
+package BinaryTree;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
 public class LA44_LC144_PreOrderTraversal {
     public List<Integer> preOrder(TreeNode root) {
         List<Integer> result = new ArrayList<>();
@@ -8,7 +15,7 @@ public class LA44_LC144_PreOrderTraversal {
         stack.offerFirst(root);
         while (!stack.isEmpty()) {
             TreeNode curr = stack.pollFirst();
-            result.add(curr);
+            result.add(curr.key);
             if (curr.right != null) {
                 stack.offerFirst(curr.right);
             }

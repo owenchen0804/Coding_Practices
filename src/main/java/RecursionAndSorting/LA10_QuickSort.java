@@ -1,4 +1,9 @@
+package RecursionAndSorting;
+
+import java.util.Random;
+
 public class LA10_QuickSort {
+
     public int[] quickSort(int[] array) {
         if (array == null || array.length <= 1) {
             return array;

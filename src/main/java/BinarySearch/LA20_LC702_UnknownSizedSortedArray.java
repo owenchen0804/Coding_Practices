@@ -1,8 +1,10 @@
+package BinarySearch;
+
 interface Dictionary{
     public Integer get(int index);
 }
 
-public class UnknownSizedSortedArray {
+public class LA20_LC702_UnknownSizedSortedArray {
     public int searchDictionary(Dictionary dict, int target) {
         if (dict == null || dict.get(0) == null || dict.get(0) != target || dict.get(1) == null || dict.get(1) != target) {
             return -1;
@@ -12,6 +14,8 @@ public class UnknownSizedSortedArray {
             index *= 10;
         }
         return binarySearch(dict, target, index, index * 10);
+        // 10 times jump out + jump in = log10(N) + log2(10N)
+        //  2 times jump out + jump in = log2(N) + lig2(2N)
     }
 
     private int binarySearch(Dictionary dict, int target, int left, int right) {

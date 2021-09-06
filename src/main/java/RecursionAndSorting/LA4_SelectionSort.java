@@ -1,5 +1,7 @@
-public class SelectionSort {
-    public int[] selectionSort(int array) {
+package RecursionAndSorting;
+
+public class LA4_SelectionSort {
+    public int[] selectionSort(int[] array) {
         if (array == null || array.length <= 1) {
             return array;
         }

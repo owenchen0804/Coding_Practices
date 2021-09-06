@@ -1,5 +1,7 @@
-public class LA19KClosest {
-    public int[] kclosest(int[] array, int target) {
+package BinarySearch;
+
+public class LA19_KClosestNumbers {
+    public int[] kclosest(int[] array, int target, int k) {
         // assume array is not null or empty, k <= array.length
         int closest = findClosest(array, target);
         int[] result = new int[k];

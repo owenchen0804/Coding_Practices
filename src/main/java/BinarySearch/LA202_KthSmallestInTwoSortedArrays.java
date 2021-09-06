@@ -1,5 +1,7 @@
+package BinarySearch;
+
 public class LA202KthSmallestInTwoSortedArrays {
-    public int kth(int[] a, int[] b) {
+    public int kth(int[] a, int[] b, int k) {
         return kth(a, 0, b, 0, k);
     }
 
@@ -13,7 +15,7 @@ public class LA202KthSmallestInTwoSortedArrays {
         }
         if (k == 1) {
             // return a[aleft] <= b[bleft] ? a[aleft] : b[bleft];
-            return Math.min(a[aleft], b[bleft]);
+            return Math.min(a[aLeft], b[bLeft]);
         }
 
         int amid = aLeft + k / 2 - 1;
@@ -21,8 +23,8 @@ public class LA202KthSmallestInTwoSortedArrays {
         int aval = amid >= a.length ? Integer.MAX_VALUE : a[amid];
         int bval = bmid >= b.length ? Integer.MAX_VALUE : b[bmid];
         if (aval <= bval) {
-            return kth(a, amid + 1, b, bleft, k - k / 2);
+            return kth(a, amid + 1, b, bLeft, k - k / 2);
         }
-        return kth(a, aleft, b, bmid + 1, k - k / 2);
+        return kth(a, aLeft, b, bmid + 1, k - k / 2);
     }
 }

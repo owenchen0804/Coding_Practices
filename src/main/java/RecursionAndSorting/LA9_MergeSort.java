@@ -1,3 +1,5 @@
+package RecursionAndSorting;
+
 public class LA9_MergeSort {
     public int[] mergeSort(int[] array) {
         if (array == null || array.length <= 1) {
@@ -27,15 +29,15 @@ public class LA9_MergeSort {
         int j = left, k = mid + 1;
         while (j <= mid && k <= right) {
             if (helper[j] <= helper[k]) {
-                array[i] = helper[j++];
+                array[left] = helper[j++];
             }
             else {
-                array[i] = helper[k++];
+                array[left] = helper[k++];
             }
-            i++;
+            left++;
         }
         while (j <= mid) {
-            array[i++] = helper[j++];
+            array[left++] = helper[j++];
         }
     }
 }

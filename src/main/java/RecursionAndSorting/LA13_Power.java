@@ -1,4 +1,6 @@
-public class LA13Power {
+package RecursionAndSorting;
+
+public class LA13_Power {
     public long pow(int a, int b) {
         // assume b >= 0
         if (b == 0) {

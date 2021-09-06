@@ -1,3 +1,5 @@
+package BinarySearch;
+
 public class LC33_LC81_SearchRotatedSortedArray {
     // e.g. array = [4, 5, 7, 8, 0, 1, 2]
     public int search(int[] nums, int target) {
