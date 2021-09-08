@@ -1,3 +1,12 @@
+package Heap_BFS;
+
+import BinaryTree.TreeNode;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+
 public class LA57_LC102_LevelOrderTraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
@@ -13,10 +22,10 @@ public class LA57_LC102_LevelOrderTraversal {
                 TreeNode curr = q.poll();
                 curLayer.add(curr.key);
                 if (curr.left != null) {
-                    queue.offerLast(curr.left);
+                    q.offer(curr.left);
                 }
                 if (curr.right != null) {
-                    queue.offerLast(curr.right);
+                    q.offer(curr.right);
                 }
             }
             result.add(curLayer);

@@ -1,7 +1,6 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
+package Heap_BFS;
+
+import java.util.*;
 
 public class LA26_LC378_KthSmallestInSortedMatrix {
     private static String[] args;
@@ -49,7 +48,7 @@ public class LA26_LC378_KthSmallestInSortedMatrix {
         list.add(3);
         list.add(1);
         list.add(2);
-        Collections.sort(list);
+        Collections.sort(list, Collections.reverseOrder());
         System.out.println(list);
     }
 }

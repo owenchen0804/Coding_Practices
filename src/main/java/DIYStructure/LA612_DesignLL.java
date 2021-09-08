@@ -1,3 +1,5 @@
+package DIYStructure;
+
 class ListNode {
     int value;
     ListNode next;
@@ -7,12 +9,12 @@ class ListNode {
     }
 }
 
-public class MyLinkedList {
+public class LA612_DesignLL {
     //  注意和整个Linked List有关的field只有head，以及eager computation必须要有的length
     public ListNode head;
     public int length;
 
-    public MyLinkedList() { //  初始化给LL赋值，遵循0假空原则
+    public LA612_DesignLL() { //  初始化给LL赋值，遵循0假空原则
         this.head = null;
         this.length = 0;
     }

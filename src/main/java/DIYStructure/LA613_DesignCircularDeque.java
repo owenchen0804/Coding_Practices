@@ -1,12 +1,12 @@
 package DIYStructure;
 
-public class MyCircularDeque {
+public class LA613_DesignCircularDeque {
     private int head;
     private int tail;
     private int size;
     private int[] array;
 
-    public MyCircularDeque(int k) {
+    public LA613_DesignCircularDeque(int k) {
         //  注意这里的k是传给constructor内部可见的变量，在其他api中k不可见!
 
         // 因为insertFirst和insertLast都要赋值，如果head = tail = 0的话，

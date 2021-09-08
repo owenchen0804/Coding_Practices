@@ -1,3 +1,7 @@
+package Heap_BFS;
+
+import java.util.*;
+
 class GraphNode{
     public int key;
     public List<GraphNode> neighbors;
@@ -30,7 +34,7 @@ public class LA56_LC785_Bipartite {
         visited.put(node, 0);
         while (!q.isEmpty()) {  //从第一个node开始，每一个邻居都要进入queue"过堂"判断group value
             GraphNode curr = q.poll();
-            int curGroup = map.get(curr);  // group assigned for current node
+            int curGroup = visited.get(curr);  // group assigned for current node
             int neiGroup = curGroup == 0 ? 1 : 0;   // assign group for all neighbors of current node
             for (GraphNode nei : curr.neighbors) {
                 if (!visited.containsKey(nei)) {

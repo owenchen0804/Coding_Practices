@@ -1,6 +1,6 @@
 package BinarySearch;
 
-public class LA202KthSmallestInTwoSortedArrays {
+public class LA202_KthSmallestInTwoSortedArrays {
     public int kth(int[] a, int[] b, int k) {
         return kth(a, 0, b, 0, k);
     }

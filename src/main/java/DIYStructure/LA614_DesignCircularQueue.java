@@ -1,10 +1,12 @@
-public class MyCircularQueue{
+package DIYStructure;
+
+public class LA614_DesignCircularQueue {
     private int head;
     private int tail;
     private int size;
     private int[] array;
 
-    public MyCircularQueue(int k) {
+    public LA614_DesignCircularQueue(int k) {
         head = 0;
         tail = 0;
         size = 0;

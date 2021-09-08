@@ -44,7 +44,7 @@ public class LA25_KSmallestInUnsortedArray {
     }
 
     // 3. Quick Select 和quick sort在find pivot类似，
-    //  TC: in average O(n), worst O(n^2)
+    //  TC: in average O(n), 几乎可以做到每次大约减半，最坏情况每次都少一个数而已，worst O(n^2)
     public int[] quickSelect(int[] array, int k) {
         if (array.length == 0 || k == 0) {
             return new int[0];
