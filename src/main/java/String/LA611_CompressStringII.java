@@ -10,12 +10,12 @@ public class LA611_CompressStringII {
         int slow = 0;
         int newLen = 0;
         int fast = 0;
-        for (; fast < array.length; fast++) {
+        while (fast < array.length) {   // 不能是for循环，因为fast会在新的character停下来，不能自动再fast++
             int begin = fast;
             while (fast < array.length && array[fast] == array[begin]) {
                 fast++;
             }
-            array[slow++] = array[fast];    // 不管出现几次，这个character先写到slow对应的index上
+            array[slow++] = array[begin];    // 不管出现几次，这个character先写到slow对应的index上
             if (fast - begin == 1) {    // will be handled by Step2
                 newLen += 2;    // 比如abc => a1b1c1 需要占用2位
             }
