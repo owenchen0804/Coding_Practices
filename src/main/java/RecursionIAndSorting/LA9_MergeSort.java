@@ -1,4 +1,4 @@
-package RecursionAndSorting;
+package RecursionIAndSorting;
 
 public class LA9_MergeSort {
     public int[] mergeSort(int[] array) {

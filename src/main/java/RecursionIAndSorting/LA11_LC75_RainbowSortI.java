@@ -1,4 +1,4 @@
-package RecursionAndSorting;
+package RecursionIAndSorting;
 
 public class LA11_LC75_RainbowSortI {
     public int[] rainbowSortI(int[] array) {

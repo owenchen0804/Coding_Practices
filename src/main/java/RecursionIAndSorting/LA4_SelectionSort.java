@@ -1,4 +1,4 @@
-package RecursionAndSorting;
+package RecursionIAndSorting;
 
 public class LA4_SelectionSort {
     public int[] selectionSort(int[] array) {

@@ -1,4 +1,4 @@
-package RecursionAndSorting;
+package RecursionIAndSorting;
 
 public class LA400_RainbowSortIII {
     // Method 1 通过count sort的方法

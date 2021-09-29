@@ -1,4 +1,4 @@
-package RecursionAndSorting;
+package RecursionIAndSorting;
 
 public class LA13_Power {
     public long pow(int a, int b) {
