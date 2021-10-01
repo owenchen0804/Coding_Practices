@@ -14,7 +14,7 @@ public class LA253_LC3_LongestSubstringWithoutDuplicate {
             fast++;
             while (count > 0) {// it means duplicate
                 char c2 = s.charAt(slow);
-                if (map[c2] > 1) {  // ==1说明正好有一个unique的，>1说明有duolicate了
+                if (map[c2] > 1) {  // ==1说明正好有一个unique的，>1说明有duplicate了
                     count--;
                 }
                 map[c2]--;
