@@ -1,4 +1,4 @@
-package DPI;
+package DPII;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -28,4 +28,6 @@ public class LA99_DictionaryWordI {
         }
         return M[input.length()];
     }
+    // 注意这题的TC是O(N^3)
+    // String.substring()需要O(n)的时间，同时用set.contains()里面长度为n也需要O(n)的时间，二者是并列，所以相加的关系
 }
