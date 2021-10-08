@@ -16,7 +16,7 @@ public class MinHeap {
     }
 
     private void heapify() {
-        //  每一个带孩子的元素都可能需要往下挪位置，所以最后一个带孩子的就是size/2-1
+        //  每一个带孩子的元素都可能需要往下挪位置，尾元素坐标size - 1, 所以最后一个带孩子的坐标就是size/2-1
         for (int i = size / 2 - 1; i >= 0; i--) {
             percolateDown(i);
         }
@@ -55,6 +55,9 @@ public class MinHeap {
             int leftChildIndex = index * 2 + 1;
             int rightChildIndex = index * 2 + 2;
             int swapCandidate = leftChildIndex; // 因为当index == size / 2 - 1时，正好leftChildIndex = size - 1
+            //  不一定！比如size = 3 [0, 1, 2]; parentIndex = 0, 但是leftChildIndex = 1 != size - 1!
+            //  但是适用于size = 2 [0, 1]的情况，所以anyway不管怎样左孩子一定都在，右孩子则不一定，所以swapCandidateIndex
+            //  默认值为左孩子方便讨论!
             //  也就是array的最后一个，此时还有可能和左孩子换，但是右孩子已经出界了。
             //  所以默认swapCandidate是左孩子比较容易做分情况讨论
             if (rightChildIndex <= size - 1 && array[rightChildIndex] < array[leftChildIndex]) {
