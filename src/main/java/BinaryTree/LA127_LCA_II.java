@@ -25,24 +25,41 @@ public class LA127_LCA_II {
         int depthOne = resultOne.count;
         int depthTwo = resultTwo.count;
         if ( depthOne >= depthTwo) {
-            // getLCA(one, two, depthOne - depthTwo);
+            return getLCA(one, two, depthOne - depthTwo);
         }
         else {
-            // getLCA(two, one, depthTwo - depthOne);
+            return getLCA(two, one, depthTwo - depthOne);
         }
-        return one;
     }
 
-    //private TreeNodeP getLCA(TreeNodeP lowerNode, TreeNodeP higherNode, int height) {
-
-   // }
+    private TreeNodeP getLCA(TreeNodeP lowerNode, TreeNodeP higherNode, int height) {
+        while (height > 0) {
+            lowerNode = lowerNode.parent;
+            height--;
+        }
+        while (lowerNode != higherNode) {
+            lowerNode = lowerNode.parent;
+            higherNode = higherNode.parent;
+        }
+        return lowerNode;
+    }
 
     private Result getDepth(TreeNodeP root) {
+        //  Depth of root is 1
         int count = 1;
         while (root.parent != null) {
             root = root.parent;
             count++;
         }
         return new Result(root, count);
+    }
+
+    //  这种办法适用于面试时，开一个size为1的数组
+    private int getDepth2(TreeNodeP[] node) {
+        int count = 1;
+        while (node[0].parent != null) {
+            node[0] = node[0].parent;
+        }
+        return count;
     }
 }
