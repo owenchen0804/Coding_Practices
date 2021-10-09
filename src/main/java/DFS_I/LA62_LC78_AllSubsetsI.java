@@ -6,6 +6,8 @@ import java.util.List;
 public class LA62_LC78_AllSubsetsI {
     public List<String> subSets(String sets) {
         List<String> result = new ArrayList<>();
+        //  注意！这里当sets = ""空的时候，不能直接返回result！
+        //  下面的helper() cover了这种情况，把空的sb转成了empty string加到result里面，才是和题目要求的一致！
         if (sets == null) {
             return result;
         }
