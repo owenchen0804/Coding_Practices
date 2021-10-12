@@ -8,13 +8,17 @@ public class Test1 {
             z[i] += y;
         }
         y *= 2;
-        System.out.print(Arrays.toString(z) + ", ");
+        System.out.println(Arrays.toString(z) + ", ");
     }
     public static void main(String[] args) {
         int[] x = {5, 6, 7};
         int y = 4;
         f(x, y);
-        System.out.print(Arrays.toString(x) + ", " + y);
+        // System.out.print(Arrays.toString(x) + ", " + y);
+        char c = 'a';
+        int i = (int) c;
+        System.out.println(c);
+        System.out.println(i);
 
 
     }
