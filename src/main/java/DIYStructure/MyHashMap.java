@@ -167,7 +167,7 @@ public class MyHashMap {
         }
     }
 
-    public Integer remove(String key) {
+    public Integer remove(String key) { 
         int index = getIndex(key);
         Entry<String, Integer> entry = array[index];
         Entry<String, Integer> prev = null;
