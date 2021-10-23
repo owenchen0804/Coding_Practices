@@ -25,7 +25,7 @@ public class LA88_LC55_JumpGameI {
         return dp[0];
     }
 
-    // Greedy
+    // Greedy 贪心算法
     // maxReach是初始值为0，随着i的变化，我们要incremental update maxReach = Math.max(maxReach, i + nums[i])
     // 当发现存在某个i，且i > maxReach的时候，表明无论如何maxReach也到不了index = i了，就要return false
 

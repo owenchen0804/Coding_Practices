@@ -1,5 +1,6 @@
 package RecursionII;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class LA121_LC59_SpiralMatrixI {
@@ -22,19 +23,24 @@ public class LA121_LC59_SpiralMatrixI {
                 result[i][right] = num++;
             }
             right--;
-            if (up <= down) {
+            //  if (up <= down) {
                 for (int i = right; i >= left; i--) {
                     result[down][i] = num++;
                 }
                 down--;
-            }
-            if (left <= right) {
+            //  }
+            //  if (left <= right) {
                 for (int i = down; i >= up; i--) {
                     result[i][left] = num++;
                 }
                 left++;
-            }
+            //  }
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        LA121_LC59_SpiralMatrixI test = new LA121_LC59_SpiralMatrixI();
+        System.out.println(Arrays.deepToString(test.generateMatrix(2)));
     }
 }
