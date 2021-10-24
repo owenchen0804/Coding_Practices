@@ -15,9 +15,9 @@ public class LA625_LongestSubarrayWithOnlyOne {
                 // 但是如果nums[slow]还是1的话，括号里面不执行，但是！ slow还是会++的。
             }
             //  不太理解上述写法的话可以再加一个
-            //  else {
+            //   else {
             //      slow++;
-            //  }
+            //   }
 
         }
         return longest;
