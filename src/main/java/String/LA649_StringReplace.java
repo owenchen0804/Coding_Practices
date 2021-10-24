@@ -14,15 +14,17 @@ public class LA649_StringReplace {
     }
 
     private String replaceShorter(char[] array, String source, String target) {
-        int slow = 0;
-        for (int fast = 0; fast < array.length - source.length(); fast++) {
-            if (equalString(array, fast, source)) {
+        int slow = 0, fast = 0;
+        // 不能用for循环，因为fast会自己++ !!
+        // for (int fast = 0; fast < array.length - source.length(); fast++) {
+        while (fast < array.length) {
+            if (fast <= array.length - source.length() && equalString(array, fast, source)) {
                 copyString(array, slow, target);
                 fast += source.length();
                 slow += target.length();
             }
             else {
-                array[slow++] = array[fast];
+                array[slow++] = array[fast++];
             }
         }
         return new String(array, 0, slow);

@@ -27,8 +27,9 @@ public class LA611_CompressStringII {
         }
 
         char[] result = new char[newLen];
-        slow = result.length - 1;
         fast = slow - 1;
+        slow = result.length - 1;
+
         while (fast >= 0) {
             if (Character.isDigit(array[fast])) {
                 while (fast >= 0 && Character.isDigit(array[fast])) {// 如果一直是数字就一直copy

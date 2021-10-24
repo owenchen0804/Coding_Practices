@@ -10,11 +10,13 @@ public class LA175_DecompressStringII {
         int i = 0;
         while (i < array.length) {
             // if (!Character.isDigit(array[i])) { // it must be a letter
-                sb.append(array[i]);
-                int start = i;
-                while (i + 1 < array.length && Character.isDigit(array[i + 1])) {
+            //  开头第一个一定是一个字母，直接append先，再讨论后面是否数字为0
+                sb.append(array[i++]);
+                int start = i;  // 这里i一直往前走比较好，每次while进来后start通过=i来更新值
+                while (i < array.length && Character.isDigit(array[i])) {
                     i++;
                 }
+                // 跳出来说明i对应的character已经不再是数字了，而是新的字母，可以进入新的循环被再次append了
                 int count = getCount(array, start + 1, i);
                 if (count == 0) {
                     sb.deleteCharAt(sb.length() - 1);

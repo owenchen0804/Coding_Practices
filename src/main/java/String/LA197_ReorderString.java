@@ -24,10 +24,10 @@ public class LA197_ReorderString {
         // lm:2, m:4, rm: 6
         // 0 1 2 3 4 5 6 7 8 9
         // lm:2, m:5, rm:7
-        // chunk1: [left, lm-1]
-        // chunk2: [lm, m-1]
-        // chunk3: [m, rm-1]
-        // chunk4: [rm, right]
+        // chunk1: [left, lm-1] [0,1]
+        // chunk2: [lm, m-1]    [2,3,4]
+        // chunk3: [m, rm-1]    [5,6]
+        // chunk4: [rm, right]  [7,8,9]
         // 要保证chunk1 & chunk3的size一致
         int mid = left + length / 2;
         int lmid = left + length / 4;
