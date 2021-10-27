@@ -24,4 +24,11 @@ public class LA253_LC3_LongestSubstringWithoutDuplicate {
         }
         return maxLength;
     }
+
+    public static void main(String[] args) {
+        LA253_LC3_LongestSubstringWithoutDuplicate test = new LA253_LC3_LongestSubstringWithoutDuplicate();
+        String s = "abcbde";
+        System.out.println(test.lengthOfLongestSubstring(s));
+
+    }
 }
