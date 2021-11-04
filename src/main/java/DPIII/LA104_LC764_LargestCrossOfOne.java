@@ -37,6 +37,7 @@ public class LA104_LC764_LargestCrossOfOne {
                 count = zero.contains(r * n + c) ? 0 : count + 1;
                 dp[r][c] = Math.min(dp[r][c], count);
                 longest = Math.max(dp[r][c], longest);
+                //  对于每个点，都是上下左右都看完了之后再update最大值
             }
         }
         return longest;

@@ -13,6 +13,8 @@ public class LA105_LargestXOfOnes {
         }
         int[][] leftUp = leftUp(matrix, N, M);
         int[][] rightDown = rightDown(matrix, N, M);
+        // 这个X拆分开来，先看左上和右上，因为对于i而言是要看i - 1的
+        // 同理X后看左下和右下，所以要逆序for循环，由i+1得到i
         return merge(leftUp, rightDown, N, M);
     }
 
@@ -41,6 +43,7 @@ public class LA105_LargestXOfOnes {
             for (int j = 0; j < M; j++) {
                 if (matrix[i][j] == 1) {
                     left[i][j] = getNumber(left, i - 1, j - 1, N, M) + 1;
+                    //  注意这里都是针对dp[][]自己来getNumber的，而不是原来的input matrix
                     up[i][j] = getNumber(up, i - 1, j + 1, N, M) + 1;
                 }
             }
