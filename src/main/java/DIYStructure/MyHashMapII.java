@@ -117,6 +117,11 @@ public class MyHashMapII {
         return null;    // 插入新元素返回Null
     }
 
+    private boolean needRehashing() {
+        float ratio = (size + 0.0f) / array.length;
+        return ratio >= loadFactor;
+    }
+
     private void rehashing() {
         Node<String, Integer>[] oldArray = array;
         array = (Node<String, Integer>[]) new Node[array.length * 2];
