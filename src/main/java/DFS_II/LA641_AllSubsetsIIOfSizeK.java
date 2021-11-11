@@ -1,5 +1,9 @@
 package DFS_II;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class LA641_AllSubsetsIIOfSizeK {
     public List<String> subSetsIIOfSizeK(String set, int k) {
         // Write your solution here
