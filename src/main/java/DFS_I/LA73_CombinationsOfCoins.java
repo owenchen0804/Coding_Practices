@@ -15,7 +15,6 @@ public class LA73_CombinationsOfCoins {
                         List<List<Integer>> result) {
         //  这里index为coins.length - 1就是看最后一个硬币是否能整除，不能整除就直接return了，所以不用再往下分叉
         if (index == coins.length - 1) {
-
             if (target % coins[index] == 0) {
                 curList.add(target / coins[index]);
                 result.add(new ArrayList(curList));
