@@ -10,7 +10,7 @@ public class LA264_KeepDistance {
     }
 
     private boolean DFS(int[] array, int n) {
-        //  思路是先放最大的数，从大到小依次，一对一对的放，直到1也放完 n = 0 了到base case退出
+        //  思路是先放最大的数，从大n开始到小1依次，一对一对的放，直到1也放完 n = 0 了到base case退出
         if (n == 0) {
             return true;
         }
