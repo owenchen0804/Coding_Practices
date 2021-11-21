@@ -45,7 +45,7 @@ public class LA147_LC93_RestoreIPAddress {
             char a = ip[offset];
             char b = ip[offset + 1];
             char c = ip[offset + 2];
-            if ((a == '1' || a == '2' && b >= '0' && b <= '4') ||
+            if ((a == '1' ) || (a == '2' && b >= '0' && b <= '4') ||
                     (a == '2' && b == '5' && c >= '0' && c <= '5')) {
                 sb.append(a).append(b).append(c).append('.');
                 DFS(ip, level + 1, offset + 3, sb, result);

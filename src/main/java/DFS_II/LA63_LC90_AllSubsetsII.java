@@ -27,6 +27,7 @@ public class LA63_LC90_AllSubsetsII {
         helper(set, sb, index + 1, result);
         sb.deleteCharAt(sb.length() - 1);
 
+        // 如果选择不append当前的index，那么后面如果有重复的也不能要
         while (index + 1 < set.length && set[index] == set[index + 1]) {
          index++;   // 当set[index] 不等于set[index + 1]的时候跳出，比如abbc，当index = 2跳出
         }

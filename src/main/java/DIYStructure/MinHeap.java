@@ -3,6 +3,11 @@ package DIYStructure;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
+//  如果是Heap Sort的话，思路是：
+//  要建立一个maxHeap，用heapify()的方式，每次做percolateDown()
+//  完成后堆顶是最大值，把它swap到array的最后，就是最大值
+//  size--；然后继续heapify()，又得到新的堆顶元素作为最大值再swap到倒数第二的位置，如此往复
+
 public class MinHeap {
     private int[] array;
     private int size;
