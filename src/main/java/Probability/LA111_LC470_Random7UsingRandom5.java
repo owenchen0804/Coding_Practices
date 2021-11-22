@@ -1,6 +1,6 @@
 package Probability;
 
-public class LA111_Random7UsingRandom5 {
+public class LA111_LC470_Random7UsingRandom5 {
     public int random7() {
         // write your solution here
         // you can use RandomFive.random5() for generating

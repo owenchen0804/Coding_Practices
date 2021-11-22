@@ -1,6 +1,6 @@
 package Probability;
 
-public class LA108_PerfectShffule {
+public class LA108_PerfectShuffle {
     public void shuffle(int[] array) {
         // Write your solution here.
         if (array.length <= 1) {
