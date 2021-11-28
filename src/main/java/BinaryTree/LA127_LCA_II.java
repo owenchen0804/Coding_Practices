@@ -24,6 +24,13 @@ public class LA127_LCA_II {
         }
         int depthOne = resultOne.count;
         int depthTwo = resultTwo.count;
+
+        // int depthOne = getDepth2(node1);
+        // int depthTwo = getDepth2(node2);
+        // if (node1[0] != node2[0]) {
+        //  return null;
+        // }
+
         if ( depthOne >= depthTwo) {
             return getLCA(one, two, depthOne - depthTwo);
         }
