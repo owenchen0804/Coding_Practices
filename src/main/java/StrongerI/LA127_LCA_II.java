@@ -1,4 +1,6 @@
-package BinaryTree;
+package StrongerI;
+
+import BinaryTree.TreeNodeP;
 
 class Result {
     public TreeNodeP node;
