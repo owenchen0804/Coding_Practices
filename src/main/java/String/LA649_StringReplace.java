@@ -78,4 +78,20 @@ public class LA649_StringReplace {
         }
         return matchIndexes;
     }
+
+    public String replace2(String input, String source, String target) {
+        // 新开char[] array 或者像这样用StringBuilder的方法都不需要in-place操作，所以对于source/target长度无限制
+        StringBuilder sb = new StringBuilder();
+        int fromIndex = 0;
+        int matchIndex = input.indexOf(source, fromIndex);
+        //string.indexOf()可以找到能够match上source的那个index
+        while (matchIndex != -1) {
+            sb.append(input, fromIndex, matchIndex).append(target);
+            fromIndex = matchIndex + source.length();
+            matchIndex = input.indexOf(source, fromIndex);
+        }
+        // 跳出循环表示再没有更多的match上了，会返回-1，那么还需要把fromIndex及其之后的都append上
+        sb.append(input, fromIndex, input.length());
+        return sb.toString();
+    }
 }
