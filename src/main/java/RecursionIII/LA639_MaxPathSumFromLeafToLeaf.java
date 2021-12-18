@@ -2,7 +2,7 @@ package RecursionIII;
 
 import BinaryTree.TreeNode;
 
-public class MaxPathSumFromLeafToLeaf {
+public class LA639_MaxPathSumFromLeafToLeaf {
     public int max(TreeNode root) {
         int[] max = {Integer.MIN_VALUE};
         helper(root, max);
