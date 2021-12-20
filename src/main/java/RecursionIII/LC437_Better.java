@@ -20,8 +20,8 @@ public class LC437_Better {
 
         int sum = preSum + root.key;
         if (hashmap.containsKey(sum - target)) {
-            // count += hashmap.get(sum - target);
-            count++;
+            count += hashmap.get(sum - target);
+            // count++;
         }
 
         hashmap.put(sum, hashmap.getOrDefault(sum, 0) + 1);
