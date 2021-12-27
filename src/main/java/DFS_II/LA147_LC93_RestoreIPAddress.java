@@ -10,6 +10,7 @@ public class LA147_LC93_RestoreIPAddress {
             return result;
         }
         StringBuilder sb = new StringBuilder();
+        // 因为要对input一个个char的分析，所以转成charArray比较方便
         DFS(s.toCharArray(), 0, 0, sb, result);
         return result;
     }
