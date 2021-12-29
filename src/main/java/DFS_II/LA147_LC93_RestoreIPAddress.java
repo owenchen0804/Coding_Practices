@@ -24,7 +24,9 @@ public class LA147_LC93_RestoreIPAddress {
             return;
         }
 
-        if (offset < ip.length) {// offset始终跟着input的长度，如果还差1位那么也可以当做level4的数字
+        if (offset < ip.length) {
+            // offset始终跟着input的长度，而不是sb的长度
+            // 如果还差1位那么也可以当做level4的数字
             sb.append(ip[offset]).append('.');
             DFS(ip, level + 1, offset + 1, sb, result);
             // 当前只append了ip[]里面的一位，所以offset只+1，不包括'.'
