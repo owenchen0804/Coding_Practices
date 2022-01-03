@@ -7,16 +7,18 @@ public class LA272_LC17_CombinationsForTelephonePadI {
     public String[] combinations(int number) {
         // Write your solution here
         List<String> result = new ArrayList<>();
-        char[] numbers = Integer.toString(number).toCharArray(); //  int -> String -> char[]
+        char[] numbers = Integer.toString(number).toCharArray();
+        //  int -> String -> char[]
         String[] numToChar = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv","wxyz"};
         StringBuilder sb = new StringBuilder();
-        helper(result, number, numToChar, 0, sb);
+        helper(result, numbers, numToChar, 0, sb);
         return result.toArray(new String[result.size()]);
-        // 把list转成array,但是在new的时候需要给出result.size()
+        // 把List<String>转成String array,但是在new的时候需要给出result.size()
     }
 
     private void helper(List<String> result, char[] numbers, String[] numToChar, int level, StringBuilder sb) {
         if (level == numbers.length) {
+            result.add(sb.toString());
             return;
         }
         char[] chars = numToChar[numbers[level] - '0'].toCharArray();
