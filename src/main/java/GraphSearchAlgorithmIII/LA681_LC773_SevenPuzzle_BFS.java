@@ -1,4 +1,4 @@
-package StrongerIII;
+package GraphSearchAlgorithmIII;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;

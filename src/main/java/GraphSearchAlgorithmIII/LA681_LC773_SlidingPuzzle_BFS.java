@@ -1,4 +1,4 @@
-package StrongerIII;
+package GraphSearchAlgorithmIII;
 
 import java.util.HashSet;
 import java.util.LinkedList;
