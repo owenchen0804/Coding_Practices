@@ -11,6 +11,8 @@ public class LA202_KthSmallestInTwoSortedArrays {
         // base case 3 scenarios
         // 如果a or b直接撸完了，那么直接返回另外一个array[]的具体一个index就好
         // 如果 k == 1 剩最后一个了，那么直接取a, b二者较小的那个
-
+        if (aLeft >= a.length) {
+            return b[bLeft + k - 1];
+        }
     }
 }
