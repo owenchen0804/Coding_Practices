@@ -52,11 +52,11 @@ public class LA208_FirstNonRepeatingCharacterInStream {
     }
 
     private void append(Node node) {
-        singled.put(node.ch, node); // 这个正式进入单独出现的HashMap中
+        singled.put(node.ch, node); //  这个正式进入单独出现的HashMap中
         tail.next = node;   //  每次在tail的后面append
         node.prev = tail;
         tail = tail.next;   //  然后tail还要指向最后一个node
-        node.next = head;   // circular 走回去
+        node.next = head;   //  circularLL所以要走回去
     }
 
     private void remove(Node node) {
