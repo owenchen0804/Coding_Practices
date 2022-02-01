@@ -25,7 +25,7 @@ public class LA208_FirstNonRepeatingCharacterInStream {
     private Map<Character, Node> singled;
     private Set<Character> repeated;
 
-    // constructor需要给head/tail赋初值并且变成circular DLL
+    //  constructor需要给head/tail赋初值并且变成circular DLL
     public LA208_FirstNonRepeatingCharacterInStream() {
         tail = new Node(null);
         tail.prev = tail;
