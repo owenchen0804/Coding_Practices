@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class LA1_LC300_LongestIncreasingSubsequence {
     public int lengthOfLIS(int[] nums) {
         int[] lowestEnding = new int[nums.length + 1];
+        //  lowestEnding[i]的物理意义是，以长度为i的longest subsequence对应在lowestEnding[]
+        //  index = i 的最小值，在后面的循环中如果发现更小的就会Overwrite掉当前的值
         lowestEnding[1] = nums[0];
         int result = 1;
         for (int i = 1; i < nums.length; i++) {
