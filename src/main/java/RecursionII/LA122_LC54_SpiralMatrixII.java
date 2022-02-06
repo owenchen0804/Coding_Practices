@@ -26,7 +26,7 @@ public class LA122_LC54_SpiralMatrixII {
             }
             right--;
             if (up <= down) {
-                for (int i = right; i>= left; i--) {
+                for (int i = right; i >= left; i--) {
                     result.add(matrix[down][i]);
                 }
                 down--;
