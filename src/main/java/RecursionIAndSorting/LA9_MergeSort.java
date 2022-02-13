@@ -40,4 +40,10 @@ public class LA9_MergeSort {
             array[left++] = helper[j++];
         }
     }
+
+    public static void main(String[] args) {
+        int[] array = {3,1,5,4,6,2,7};
+        LA9_MergeSort test = new LA9_MergeSort();
+        test.mergeSort(array);
+    }
 }

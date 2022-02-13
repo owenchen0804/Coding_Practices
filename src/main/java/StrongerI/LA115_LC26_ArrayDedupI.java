@@ -1,5 +1,8 @@
 package StrongerI;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LA115_LC26_ArrayDedupI {
     public int removeDuplicates(int[] nums) {
         if (nums.length == 0) return 0;
