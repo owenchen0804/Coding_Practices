@@ -30,4 +30,8 @@ public class LA213_LC105_ConstructTreeFromPreorderAndInOrder {
         root.right = helper(preorder, indexMap, inMid + 1, inRight, preLeft + inMid - inLeft + 1, preRight);
         return root;
     }
+
+    public static void main(String[] args) {
+        System.out.println(Integer.toString(5));
+    }
 }
