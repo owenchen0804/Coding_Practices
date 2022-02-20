@@ -13,7 +13,33 @@ public class LA220_LargestSumOfValidNumbers {
         //  其中每一行的数据在选择完了之后，就会变成一个固定的config，
         //  然后把它压缩成一个int数字，成为这一行的唯一一个数据，那么这个matrix就只有1个column
         int[][] dp = new int[k][configs.size()]; // 因为虽然想象成只有1列，但是这一列的可能性有config.size()这么多
-        
+        for (int i = 0; i < k; i++) {
+            // dp[i][j] = max(dp[i - 1][k]) 就是上一行到第0行组成的submatrix里面不和config j冲突的connfig k的最大值
+            for (int j = 0; j < configs.size(); j++) {
+                dp[i][j] = Integer.MIN_VALUE;
+                if (i == 0) {
+                    //  如果本身是最上面一行，那么就没有之前的data
+                    //  那么直接每个config j都会对应一个dp[][] value出来
+                    dp[i][j] = sum(matrix[i], configs.get(j));
+                    // dp[][] 本身还是一个二维数组，只是列的每个值都是一行数据经过不同选择后得到的一个个sum
+                }
+                else {
+                    //  有之前的row在的话就变成了一个subMatrix，于是每次衡量标准变成了
+                    //  选择前面的rows和一个不和当前config冲突的另一个config
+                    for (int l = 0; l < configs.size(); l++) {
+                        if (noConflict(configs.get(l), configs.get(j))) {
+                            dp[i][j] = Math.max(dp[i][j], dp[i - 1][l] + sum(matrix[i], configs.get(j)));
+                        }
+                    }
+                }
+            }
+        }
+        //  the result is max(dp[7][k]) 第七航里面所有dp[][]的值的最大值
+        int result = dp[k - 1][0]; //   把第一个值设为result，再逐一比较
+        for (int i = 1; i < configs.size(); i++) {
+            result = Math.max(result, dp[k - 1][i]);
+        }
+        return result;
     }
 
     private List<Integer> validConfigs(int k) {

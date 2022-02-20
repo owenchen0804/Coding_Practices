@@ -1,4 +1,4 @@
-package LeetCode;
+package Contest;
 
 public class LC2160_CalculateMinusTimes {
     public int countOperations(int num1, int num2) {
