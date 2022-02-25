@@ -25,6 +25,17 @@ public class LC1011_CapacityToShipPackagesWithinDDays {
 
     private boolean canShip(int[] weights, int days, int cap) {
         int day = 1; // 因为是从1开始算日子，不是0-indexed
-
+        int sum = 0;
+        for (int i = 0; i < weights.length; i++) {
+            // 一个个wei的试过去
+            if (sum + weights[i] > cap) {
+                //  如果累加的超过了cap能力，那么今天的货物就是新的sum，可以之后累加，之前的sum就是昨天的
+                //  天数还需要++
+                sum = weights[i];
+                day++;
+            }
+            sum += weights[i];
+        }
+        return day <= days;
     }
 }
