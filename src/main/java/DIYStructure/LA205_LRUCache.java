@@ -48,13 +48,25 @@ public class LA205_LRUCache<K, V> {
             node = new Node<K, V>(key, value);
         }
         else {
-            // map的size达到了limit，所以要把tail对应的node去掉再来append
+            //  map的size达到了limit，所以要把tail对应的node去掉再来append
+            //  也就是说这里不能new Node，只能用原来tail指向的最后一个node，把它update后再remove + append
             node = tail;
             remove(node);
             //  现在可以更新值
             node.update(key, value);
         }
         append(node); // 所有的情况最后都要放在head的
+    }
+
+    public V get(K key) {
+        Node<K, V> node = map.get(key);
+        if (node == null) {
+            return null;
+        }
+        //  即使是get，也是最新访问过的Node,需要放到head
+        remove(node);
+        append(node);
+        return node.value;
     }
 
     private Node<K, V> remove(Node<K, V> node) {
@@ -65,5 +77,28 @@ public class LA205_LRUCache<K, V> {
         if (node.next != null) {
             node.next.prev = node.prev;
         }
+        // 注意node可能指向的head or tail 这个要特别处理
+        if (node == head) {
+            head = head.next;
+        }
+        if (node == tail) {
+            tail = tail.prev;
+        }
+        node.next = null;
+        node.prev = null;
+        return node;
+    }
+
+    private Node<K, V> append(Node<K, V> node) {
+        map.put(node.key, node);
+        if (head == null) {
+            head = tail = node;
+        }
+        else {
+            node.next = head;
+            head.prev = node;   //  注意要把原来head节点的prev也要给append进来的node之后才可以移动head
+            head = node;
+        }
+        return node;
     }
 }
