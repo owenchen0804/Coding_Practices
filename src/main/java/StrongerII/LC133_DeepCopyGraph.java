@@ -2,7 +2,7 @@ package StrongerII;
 
 import java.util.*;
 
-public class LA132_LC133_DeepCopyGraph {
+public class LC133_DeepCopyGraph {
     class Node {
         public int val;
         public List<Node> neighbors;
