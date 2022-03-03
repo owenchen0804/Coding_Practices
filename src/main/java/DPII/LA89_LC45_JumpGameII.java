@@ -16,7 +16,7 @@ public class LA89_LC45_JumpGameII {
             }
             else {
                 for (int j = i + 1; j < nums.length; j++) {
-                    //  先要满足i能跳到j，并且M[j] != -1
+                    //  先要满足i能跳到j，并且dp[j] != -1
                     if (dp[j] != -1 && i + nums[i] >= j) {
                         if (dp[i] == -1 || dp[i] > dp[j] + 1) {
                             dp[i] = dp[j] + 1;
