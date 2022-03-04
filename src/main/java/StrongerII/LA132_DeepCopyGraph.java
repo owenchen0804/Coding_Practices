@@ -42,11 +42,34 @@ public class LA132_DeepCopyGraph {
 
     public List<GraphNode> deepCopyBFS(List<GraphNode> nodes) {
         //  这里没有helper function，直接需要建立result
+        //  Map存的不仅仅是所有的copied node，还有原来node与node之间的连接关系！
+
         List<GraphNode> result = new ArrayList<>();
-        Map<GraphNode, GraphNode> oldToNew = new HashMap<>();
+        Map<GraphNode, GraphNode> map = new HashMap<>();
         Queue<GraphNode> queue = new ArrayDeque<>();
         for (GraphNode node : nodes) {
-
+            queue.offer(node);
+            map.put(node, new GraphNode(node.key));
+            //  这里只存了input提供的这些nodes，在queue里面还会存其他的所有neighbor nodes
+            result.add(map.get(node));  // result存的都是copy出来的node'
         }
+        //  到for循环结束其实copied nodes都完成了，但是我们还要把neighbors的信息copy出来
+        //  所以需要Map的帮助去重
+        while (!queue.isEmpty()) {
+            //  Expand and Generate
+            GraphNode old = queue.poll();
+            for (GraphNode nei : old.neighbors) {
+                if (!map.containsKey(nei)) {
+                    map.put(nei, new GraphNode(nei.key));
+                    queue.offer(nei);
+                }
+                //  不管有没有见过nei，都要把对应的邻居关系加进来
+                map.get(old).neighbors.add(map.get(nei));
+                //  注意map.get(old)拿到的就是old', 这个copied node在while前面就被copy过了
+                //  后面neighbors里面添加到list里面的也是nei'，也就是map.get(nei)
+                //  假设之前见过nei那么直接可以map.get()，如果没见过，在if()里面也会添加
+            }
+        }
+        return result;
     }
 }
