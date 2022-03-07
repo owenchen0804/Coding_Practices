@@ -5,42 +5,34 @@ import java.util.Comparator;
 
 public class LC2191_SortTheJumbledNumbers {
     public int[] sortJumbled(int[] mapping, int[] nums) {
-        Integer[] newNums = new Integer[nums.length];
-        int i = 0;
-        for (int value : nums) {
-            newNums[i++] = Integer.valueOf(value);
+        // Arrays.sort()里面传的comparator只能对class Integer，不能对int[]，所以必须要有这么一步转化！
+        int n = nums.length;
+        Integer[] indices = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            indices[i] = i;
         }
-        Arrays.sort(newNums, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer i1, Integer i2) {
-                if (getMapped(i1, mapping) < getMapped(i2, mapping)) {
-                    return -1;
-                }
-                if (getMapped(i1, mapping) == getMapped(i2, mapping)) {
-                    return 0;
-                }
-                else {
-                    return 1;
-                }
-            }
-        });
-        int[] result = new int[newNums.length];
-
-        for (int j = 0; j < result.length; j++) {
-            result[j] = newNums[j];
+        //  思路是把index按照Mapping后的大小进行sort，然后再copy到result[]里
+        //  注意下面的写法，非常重要！！
+        Arrays.sort(indices, Comparator.comparing(i -> convert(nums[i], mapping)));
+        int[] result = new int[n];
+        int k = 0;
+        for (int idx : indices) {
+            result[k++] = nums[idx];
         }
         return result;
     }
 
-
-    private static int getMapped(int num, int[] mapping) {
-        StringBuilder sb = new StringBuilder();
+    private int convert(int num, int[] mapping) {
+        if (num == 0) {
+            return mapping[0];  //  注意这个特殊情况，不会进入到while()循环中
+        }
+        int n = 0, f = 1;
         while (num > 0) {
-            sb.append(mapping[num % 10]);
+            n += mapping[(num % 10)] * f;
+            f *= 10;
             num /= 10;
         }
-        StringBuilder result = sb.reverse();
-        return Integer.parseInt(result.toString());
+        return n;
     }
 
     public static void main(String[] args) {
