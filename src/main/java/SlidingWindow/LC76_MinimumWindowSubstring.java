@@ -17,8 +17,8 @@ public class LC76_MinimumWindowSubstring {
         int minLeft = 0;
         int minLength = s.length(); //  最多就s的长度
         boolean flag = false;   // 如果一直没有匹配上就要返回""，否则的话flag设为true
-        //  有可能的2种情况是一直没有匹配上，那么minLength没变；还有一种是用了整个s.length()才匹配上，两种情况只能用flag
-        //  来区分
+        //  有可能的2种情况是一直没有匹配上，那么minLength没变；还有一种是用了整个s.length()才匹配上，
+        //  两种情况只能用flag的T/F情况来区分
         for (int fast = 0; fast < s.length(); fast++) {
             // fast指针一直保持右移，当出现map里面包含的字符时，count--
             char c1 = s.charAt(fast);
@@ -29,14 +29,14 @@ public class LC76_MinimumWindowSubstring {
                 //     map.put(c1, map.get(c1) - 1);
                 // }
                 //  只要是有的key都要改变值，因为sliding window可能包含2个B，移走1个，另一个B还是在其中的，必须要统计
-                map.put(c1, map.get(c1) - 1);
+                map.put(c1, map.get(c1) - 1);   //  map这里关于c1的value可以是负数！表示over needed
                 if (map.get(c1) >= 0) {
                     count--;    // 只有c1还没有找完，或者这一次刚好找完，才会动count
                     //  否则count可以是负数的
                 }
             }
 
-            while (count == 0) {
+            while (count == 0) {    // 能进来说明match上了，那么要先比较拿到minLength，再move slow向右
                 flag = true;
                 if (fast - slow + 1 < minLength) {
                     minLeft = slow;
