@@ -8,7 +8,10 @@ public class LA414_LC203_RemoveElement {
         while (head != null) {
             if (head.value == val) {
                 //  head = head.next;   // 这一步是不管head是不是val都要走的，应该放在if else外面
-                curr.next = head.next;  //  跳过了当前的head，但是curr不应该急着移动，在这种情况下要不动，保持在head.next前面一位
+                curr.next = head.next;
+                //  跳过了当前的head，但是curr不应该急着移动，在这种情况下要不动
+                //  保持在head.next前面一位
+                //  但这一步是有必要的，因为不这么做的话最后一个节点如果需要删除可能没有操作到
             }
             else {
                 curr.next = head;   // 要把curr和head搭上
