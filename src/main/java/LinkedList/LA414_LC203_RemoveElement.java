@@ -2,7 +2,7 @@ package LinkedList;
 
 public class LA414_LC203_RemoveElement {
     public ListNode remove(ListNode head, int val) {
-        // 1->3->2 val = 1 =》 3->2
+        // 1->3->2 val = 1 result => 3->2
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
         while (head != null) {
