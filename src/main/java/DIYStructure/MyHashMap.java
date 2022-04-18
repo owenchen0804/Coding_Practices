@@ -136,7 +136,7 @@ public class MyHashMap {
             }
             entry = entry.next;
         }
-        // entry走到LL的尾端了还没有找到key，说明不在map里面，需要插入，我们一般在head头上插入
+        //  entry走到LL的尾端了还没有找到key，说明不在map里面，需要插入，我们一般在head头上插入
         //  原因是通常最近更新的key有可能在近期被频繁的用到
         Entry<String, Integer> newNode = new Entry<>(key, value);
         newNode.next = array[index];
