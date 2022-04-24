@@ -42,6 +42,7 @@ public class LA205_LRUCache<K, V> {
             // 如果本来就有，那么要更新值，并且放到head表示刚Update过
             node = map.get(key); // 先指向它然后remove
             remove(node);
+            node.update(key, value);
         }
         else if (map.size() < limit) {
             //  map的空间还有，所以不用去掉tail的node
