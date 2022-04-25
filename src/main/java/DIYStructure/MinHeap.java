@@ -21,7 +21,8 @@ public class MinHeap {
     }
 
     private void heapify() {
-        //  每一个带孩子的元素都可能需要往下挪位置，尾元素坐标size - 1, 所以最后一个带孩子的坐标就是size/2-1
+        //  每一个带孩子的元素都可能需要往下挪位置，尾元素坐标size - 1, 所以最后一个带孩子的坐标就是
+        //  (size - 1 - 1) / 2 => size/2-1
         for (int i = size / 2 - 1; i >= 0; i--) {
             percolateDown(i);
         }
