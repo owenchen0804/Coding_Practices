@@ -25,5 +25,5 @@ public class LC1762_BuildingsWithOceanView {
         return result;
     }
     
-    
+
 }
