@@ -25,8 +25,10 @@ public class LA211_ReconstructBSTFromPostorderTraversal {
         root.left = helper(post, index, min);
         // 这里是虽然root.left可以比自己root.key小，但是要注意隐含条件！！
         // 下一个pos[index[]]的值一定要比上面一层的那个root.key的值大，也就是
-        // 传下来的这个min(就是上一层的root.key)，如果发现下一个数字比上面一层的key还要小，那肯定不能
-        // 接在当前root的左边，因为根据BST定义，上一层root的右边所有子树的值都要比它大
+        // 传下来的这个min(就是上一层的root.key)，如果发现下一个数字比上面一层的key还要小，
+        // 那肯定不能接在当前root的左边，因为根据BST定义，上一层root的右边所有子树的值都要比它大
+        // 换句话说如果发现了index[0]的值比min(上一层的root)要小，说明index[0]已经不可能在上一层的右边
+        // 那么index[0]一定会接在上一层root的左边
         // 我们讨论的这个数是要作为上一层root的右子树，也就是当前的root的左子树的可能性，它必须大于上一层root.key
         return root;
     }
