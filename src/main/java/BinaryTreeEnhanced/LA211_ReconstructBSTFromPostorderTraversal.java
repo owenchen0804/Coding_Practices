@@ -1,9 +1,6 @@
-package RecursionIII;
+package BinaryTreeEnhanced;
 
 import BinaryTree.TreeNode;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class LA211_ReconstructBSTFromPostorderTraversal {
     public TreeNode reconstruct(int[] post) {
@@ -17,7 +14,7 @@ public class LA211_ReconstructBSTFromPostorderTraversal {
         // base case，利用BST的性质，当前的root肯定不能比变化的min还要小
         if (index[0] < 0 || post[index[0]] <= min) {
             return null; // index[0] < 0 说明整个post[]已经从后往前遍历完成了
-            // 如果出现post[index[0]] < min 说明不符合BST的定义也不对
+            // 如果出现post[index[0]] <= min 说明不符合BST的定义也不对
         }
         TreeNode root = new TreeNode(post[index[0]--]);
         root.right = helper(post, index, root.key);
