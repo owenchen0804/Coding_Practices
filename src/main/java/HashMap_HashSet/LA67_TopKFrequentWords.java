@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class LA67_LC692_TopKFrequentWords {
+public class LA67_TopKFrequentWords {
     public String[] topKFrequent(String[] combo, int k) {
         if (combo.length == 0) {
             return combo;
