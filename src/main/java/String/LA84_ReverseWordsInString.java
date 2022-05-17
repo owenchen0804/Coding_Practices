@@ -1,6 +1,6 @@
 package String;
 
-public class LA84_LC151_ReverseWordsInString {
+public class LA84_ReverseWordsInString {
     public String reverseWords(String input) {  // I love Yahoo => Yahoo love I
         if (input == null || input.length() <= 1) {
             return input;

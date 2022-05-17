@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LA398_LC438_FindAllAnagrams {
+public class LA398_FindAllAnagrams {
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> result = new ArrayList<>();
         if (s.length() < p.length()) {

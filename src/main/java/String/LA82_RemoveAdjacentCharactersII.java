@@ -1,6 +1,6 @@
 package String;
 
-public class LA82_LC1047_RemoveAdjacentCharactersII {
+public class LA82_RemoveAdjacentCharactersII {
     public String removeCharacters(String input) {
         if (input == null || input.length() <= 1) {
             return input;
