@@ -1,5 +1,7 @@
 package Contest;
 
+import java.util.Arrays;
+
 public class Test2 {
     public int divisorSubstrings(int num, int k) {
         String s = Integer.toString(num);
@@ -29,8 +31,9 @@ public class Test2 {
 
 
     public static void main(String[] args) {
-        char[] tmp = new char[26];
-        System.out.print(tmp[0]);
+        int[] tmp = {1,2,3};
+        Arrays.sort(tmp);
+        System.out.print(tmp);
        // System.out.print(tmp[2] - 1);
 
     }
