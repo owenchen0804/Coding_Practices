@@ -26,7 +26,7 @@ public class LA117_ArrayDedupIII {
             }
         }
         return Arrays.copyOf(array, flag ? slow : slow + 1);
-        // 如果最后有重复的比如555, 第1个5会写到slow，但是后面发现重复flag = true了，for循环也结束了，
+        //  如果最后有重复的比如555, 第1个5会写到slow，但是后面发现重复flag = true了，for循环也结束了，
         //  此时要讨论是否应该保留slow对应的数字
 
     }
