@@ -22,4 +22,18 @@ public class LA625_LongestSubarrayWithOnlyOne {
         }
         return longest;
     }
+
+    public static void main(String[] args) {
+        int[] nums = {0,0,0,1};
+        LA625_LongestSubarrayWithOnlyOne test = new LA625_LongestSubarrayWithOnlyOne();
+        System.out.println(test.longestOnes(nums, 0));
+        int count = 0;
+        int slow = 0;
+        while (slow < 3) {
+            if (nums[slow++] == 0) {
+                count++;
+            }
+        }
+        System.out.println(slow);
+    }
 }
