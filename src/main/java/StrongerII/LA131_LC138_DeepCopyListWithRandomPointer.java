@@ -26,7 +26,7 @@ public class LA131_LC138_DeepCopyListWithRandomPointer {
             if (!map.containsKey(head)) {
                 map.put(head, new RandomListNode(head.value));
             }
-            cur.next = map.get(head); //不管head在不在map都需要cur连接上
+            cur.next = map.get(head); //不管head在不在map都需要cur连接到head所在的copy node上
             if (head.random != null) {
                 if (!map.containsKey(head.random)) {
                     map.put(head.random, new RandomListNode(head.random.value));
