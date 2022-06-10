@@ -9,6 +9,7 @@ public class LA120_LC1464_LargestAndSecondLargest {
             if (array[i] > max1) {
                 max2 = max1;
                 max1 = array[i];
+                //  注意顺序！要先把max1赋值给max2!
             }
             else if (array[i] > max2) {
                 max2 = array[i];
