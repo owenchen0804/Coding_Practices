@@ -1,5 +1,12 @@
 package String;
 
+//  为了保证chunk 1 and chunk 3的size相等，也就是原来的chunk2换到chunk3之后的size和chunk 1相等
+//  因此mid = left + size / 2，而不是left + (right - left)/2，比如8个元素，前者会到index = 4
+//  后者是index = 3，因为right -left = 7 - 0
+//  注意算lmid, mid, rmid的时候都可以从left出发，这样不容易错
+//  递归的时候两个helper()里面的坐标要写对，不然很容易错，比如不要自己先心算了size/4*2就是size/2
+//  比如size=14, size/4 * 2应该是6而不是7.
+
 public class LA197_ReorderString {
     //  ABCD1234 -> 找到中间的两段分别反转 -> AB DC 21 34 -> 中间2段整体反转 -> AB 12 CD 34 -> 同样的逻辑可以得到 A1B2C3D4
     public int[] stringShuffle(int[] array) {
