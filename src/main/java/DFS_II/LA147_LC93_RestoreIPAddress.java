@@ -18,6 +18,7 @@ public class LA147_LC93_RestoreIPAddress {
     private void DFS(char[] ip, int level, int offset, StringBuilder sb, List<String> result) {
         if (level == 4) {
             if (sb.length() == ip.length + 4) {
+                //  这里要注意，可能level到4了，打了4个点，但是ip所有的数字没有都用完，那也不符合要求
                 result.add(sb.substring(0, sb.length() - 1));
                 //  因为最后是follow前面3个level都会加上"."，在加到result之前要去掉第4段的“.”
             }
