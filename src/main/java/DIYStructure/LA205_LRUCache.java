@@ -53,6 +53,8 @@ public class LA205_LRUCache<K, V> {
             //  也就是说这里不能new Node，只能用原来tail指向的最后一个node，把它update后再remove + append
             node = tail;
             remove(node);
+            //  这里必须要先remove(node)，因为需要把旧的Key给去掉，否则先update的话
+            //  之前旧的key并没有从map中删掉，会影响了map的正确的size!
             //  现在可以更新值
             node.update(key, value);
         }
