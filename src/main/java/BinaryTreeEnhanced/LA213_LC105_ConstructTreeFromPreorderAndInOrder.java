@@ -21,6 +21,7 @@ public class LA213_LC105_ConstructTreeFromPreorderAndInOrder {
             // 注意这里base case 一定要是inLeft > inRight，不能等于！否则的话当前root的左边只有一个a的话，
             // 应该root.left = a的，但是如果可以等于，相当于只有一个元素的时候就return null了，
             // 那么就相当于root.left = null了
+            // 只有一个元素也要安排上，除非是inLeft超过了inRight
             return null;
         }
         TreeNode root = new TreeNode(preorder[preLeft]);
