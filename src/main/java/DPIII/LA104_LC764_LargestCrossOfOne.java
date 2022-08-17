@@ -7,6 +7,7 @@ public class LA104_LC764_LargestCrossOfOne {
     public int orderOfLargestPlusSign(int n, int[][] mines) {
         int[][] dp = new int[n][n];
         Set<Integer> zero = new HashSet<>();
+        //  用一个hashSet来记录0所在的坐标，因为是n*n的，所以行数*n+列数肯定是unique
         //  这题很巧妙的用row * n + col表示了所有的坐标且具有了唯一性，可以放到hashSet里面查重
         for (int[] mine : mines) {
             zero.add(mine[0] * n + mine[1]);
