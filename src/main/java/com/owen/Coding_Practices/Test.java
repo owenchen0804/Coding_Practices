@@ -4,81 +4,61 @@ import java.util.*;
 import LinkedList.*;
 
 public class Test{
-    public int[][] spiralMatrix(int m, int n, ListNode head) {
-        int left = 0, right = n - 1;
-        int up = 0, down = m - 1;
-        int[][] result = new int[m][n];
-        for (int[] res : result) {
-            Arrays.fill(res, -1);
+
+    public String largestPalindromic(String num) {
+        if (num.length() == 1) return num;
+        int[] count = new int[10];
+        for (char c : num.toCharArray()) {
+            count[c - '0']++;
         }
-        while (head != null) {
-            for (int i = left; i <= right; i++) {
-                if (head == null) {
-                    break;
+        StringBuilder sb = new StringBuilder();
+        boolean findMiddle = false;
+        char middle = '0';
+        for (int i = 9; i >= 0; i--) {
+            if (count[i] == 0) {
+                continue;
+            }
+            if (!findMiddle && count[i] % 2 == 1) {
+                middle = (char) ('0' + i);
+                findMiddle = true;
+                if (count[i] != 1) {
+                    int times = count[i] / 2;
+                    for (int j = 0; j < times; j++) {
+                        sb.append((char) (i + '0'));
+                    }
                 }
-                else {
-                    result[up][i] = head.value;
-                    head = head.next;
+                //  如果为1的话就只能放到中间，或者就不要了
+            }
+            else {
+                //  偶数
+                int times = count[i] / 2;
+                for (int j = 0; j < times; j++) {
+                    sb.append((char) (i + '0'));
                 }
             }
-            up++;
-            for (int i = up; i <= down; i++) {
-                if (head == null) {
-                    break;
-                }
-                else {
-                    result[right][i] = head.value;
-                    head = head.next;
-                }
-            }
-            right--;
-            for (int i = right; i >= left; i--) {
-                if (head == null) {
-                    break;
-                }
-                else {
-                    result[down][i] = head.value;
-                    head = head.next;
-                }
-            }
-            down--;
-            for (int i = down; i >= up; i--) {
-                if (head == null) {
-                    break;
-                }
-                else {
-                    result[left][i] = head.value;
-                    head = head.next;
-                }
-            }
-            left++;
         }
-        return result;
+
+        //  如果前缀都是0的话要去掉
+        int index = 0;
+        while (index < sb.length() && sb.charAt(index) == '0') {
+            index++;
+        }
+
+        for (int i = 0; i < index; i++) {
+            sb.deleteCharAt(i);
+        }
+
+
+        if (findMiddle) {
+            return sb.toString() + Character.toString(middle) + sb.reverse().toString();
+
+        }
+        return sb.toString() + sb.reverse().toString();
     }
 
     public static void main(String[] args) {
-        ListNode l1 = new ListNode(3);
-        ListNode l2 = new ListNode(0);
-        ListNode l3 = new ListNode(2);
-
-        ListNode l4 = new ListNode(6);
-
-        ListNode l5 = new ListNode(8);
-
-        ListNode l6 = new ListNode(1);
-
-        ListNode l7 = new ListNode(7);
-        l1.next = l2;
-        l2.next = l3;
-        l3.next = l4;
-        l4.next = l5;
-        l5.next = l6;
-        l6.next = l7;
-        Test t = new Test();
-        t.spiralMatrix(3, 5, l1);
-
-
-
-
+        Test test = new Test();
+        String s = "00009";
+        test.largestPalindromic(s);
     }
 }
