@@ -1,4 +1,4 @@
-package Microsoft;
+package DFS;
 //  DFS + BFS
 
 import BinaryTree.TreeNode;
