@@ -48,6 +48,8 @@ public class LC863_AllNodesDistanceKinBinaryTree {
         // 因为没有parent node，所以当前层必须要存parent <-> root之间的关系，应该属于无向图互相存关系
         map.putIfAbsent(root, new ArrayList<>());
         if (parent != null) {
+            //  我们在乎的只是距离，不管谁是谁的child or parent
+            //  只要是有邻居的关系，就需要加到各自node的List<TreeNode>中
             map.get(root).add(parent);
             map.get(parent).add(root);
         }
