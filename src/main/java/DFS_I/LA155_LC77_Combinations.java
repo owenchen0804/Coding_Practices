@@ -16,7 +16,8 @@ public class LA155_LC77_Combinations {
             result.add(new ArrayList<Integer>(cur));
             return;
         }
-        if (index > n) {// index == n的时候正好是是否选择最后一个数，所以还不能退出！
+        if (index > n) {
+            //  注意，当index == n的时候正好是是否选择最后一个数（可选范围是从1到n的闭区间），所以还不能退出！要>n才可以
             return;
         }
         cur.add(index);
