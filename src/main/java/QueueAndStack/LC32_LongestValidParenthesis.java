@@ -32,7 +32,7 @@ public class LC32_LongestValidParenthesis {
                     max = Math.max(max, i - left);
                 }
                 else {
-                    //  否则的话说明里面还有多余的，在等待配对的'('那么要做的是减掉栈顶的那个index
+                    //  否则的话说明里面还有多余的，在等待配对的'('. 那么要做的是减掉栈顶的那个index
                     max = Math.max(max, i - stack.peekFirst());
                 }
             }
