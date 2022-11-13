@@ -16,9 +16,11 @@ public class LA281_RemoveLeadingTrailingDuplicatedSpace {
             array[slow++] = array[fast];
         }
         //  有可能全是space然后slow一直在0，所以array[slow - 1]可能是OOB
-//        if (slow > 0 && array[slow - 1] == ' ') {
-//            slow--;
-//        }
+        //        if (slow > 0 && array[slow - 1] == ' ') {
+        //            slow--;
+        //        }
+
+        //  但因为用了trim()之后如果整个都是space的话那么array应该就是空的了，不会进入到for循环
         return new String(array, 0, slow);
     }
 }
