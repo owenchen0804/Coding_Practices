@@ -16,7 +16,7 @@ public class LA382_ShortestSubstringWithKTypedCharacters {
         while (slow + k <= len) {
             fast = slow;
             Set<Character> set = new HashSet<>();
-            // 每次break跳出循环之后fast会从slow再次出发
+            //  每次break跳出循环之后fast会从slow再次出发
             while (fast < len) {
                 if (set.size() < k) {
                     if (!set.contains(input.charAt(fast))) {
