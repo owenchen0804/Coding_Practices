@@ -6,7 +6,7 @@ import java.util.Set;
 public class LA395_RemoveCharacters {
     public String removeCharacters(String input, String t) {
         Set<Character> set = new HashSet<>();
-        // 注意String没有foreach的办法！
+        // 注意String没有enhanced for loop的写法！要写一定要先转成charArray[]
         for (int i = 0; i < t.length(); i++) {
             set.add(t.charAt(i));
         }
