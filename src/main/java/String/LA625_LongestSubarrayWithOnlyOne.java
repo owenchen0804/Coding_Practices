@@ -11,13 +11,15 @@ public class LA625_LongestSubarrayWithOnlyOne {
                 longest = Math.max(longest, ++fast - slow);
                 k--;
             } else if (nums[slow++] == 0) {
-                k++;   // 这里的意思是如果slow对应的是0，那么slow++后可以多出来一个0的quota，所以k++
-                // 但是如果nums[slow]还是1的话，括号里面不执行，但是！ slow还是会++的。
+                k++;
+                //  注意！这里的意思是如果slow对应的是0，那么slow++后可以多出来一个0的quota，所以k++
+                //  但是！如果nums[slow]还是1的话，花括号的里面不执行，但是！圆括号里面slow还是会++的。
             }
-            //  不太理解上述写法的话可以再加一个
-            //   else {
+            //  如果不太理解上述写法的话可以再加一个
+            //  else {
             //      slow++;
-            //   }
+            //  }
+            //  前面要改成if (nums[slow] == 0)
 
         }
         return longest;
