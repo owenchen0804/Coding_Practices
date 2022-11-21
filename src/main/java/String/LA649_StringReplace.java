@@ -80,12 +80,14 @@ public class LA649_StringReplace {
     }
 
     public String replace2(String input, String source, String target) {
-        // 新开char[] array 或者像这样用StringBuilder的方法都不需要in-place操作，所以对于source/target长度无限制
+        //  新开char[] array 或者像这样用StringBuilder的方法都不需要in-place操作，所以对于source/target长度无限制
         StringBuilder sb = new StringBuilder();
         int fromIndex = 0;
         int matchIndex = input.indexOf(source, fromIndex);
-        //string.indexOf()可以找到能够match上source的那个index
+        //  string.indexOf()可以找到能够match上source的那个index
         while (matchIndex != -1) {
+            //  StringBuilder的Index和String一样，都是include start, exclude end
+            //  这里就是正好把matchIndex排除在外，从matchIndex开始替换成target进行append
             sb.append(input, fromIndex, matchIndex).append(target);
             fromIndex = matchIndex + source.length();
             matchIndex = input.indexOf(source, fromIndex);
