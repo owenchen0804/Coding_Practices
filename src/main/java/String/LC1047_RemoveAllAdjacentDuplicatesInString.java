@@ -13,12 +13,15 @@ public class LC1047_RemoveAllAdjacentDuplicatesInString {
                 slow++;
                 array[slow] = array[fast++];
             }
-            else {  // 就是没有下面这个一直消消乐的while循环了
-                // while (fast + 1 < array.length && array[fast] == array[fast + 1]) {
-                //     fast++; //所有同样的字母全部消掉
-                // }
+            else {
+                //  就是没有下面这个一直消消乐的while循环了
+                //  while (fast + 1 < array.length && array[fast] == array[fast + 1]) {
+                //      fast++; //所有同样的字母全部消掉
+                //  }
                 fast++;
                 slow--;
+                //  当发现array[slow] == array[fast]的时候
+                //  fast往前跳一个，slow往回走一个，就相当于是消掉了两个重复的
             }
         }
         return new String(array, 0, ++slow);
