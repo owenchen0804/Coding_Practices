@@ -16,7 +16,8 @@ public class LC438_FindAllAnagramsInAString {
 
         //  p可能是"aba"这种有重复字母的，所以还是得用count
         //  因为你用match的话，这里没有map，没办法用map.size()
-        //  比如凑齐了aab，但是matches只能对应的是2种字母，而不能是p.length() == 3在这里
+        //  map.size()只能针对每一个字母都不同的情况
+        //  比如凑齐了aab，但是matches只能对应的是2种字母，而不能是p.length() == 3
         int count = p.length();
         int slow = 0;
         for (int fast = 0; fast < s.length(); fast++) {
