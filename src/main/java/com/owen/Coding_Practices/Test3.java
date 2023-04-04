@@ -16,6 +16,7 @@ public class Test3 {
                     nums[i] -= j;
                     fixed = true;
                     //  这里要加break!不然的话j还会往上加！
+                    break;
                 }
             }
             if (fixed == false) {
